@@ -1,6 +1,6 @@
 .reservation-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -10,8 +10,8 @@
   border: 1px solid #C9B59C;
   padding: 1rem 1.25rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   transition: all 0.3s ease;
 }
 .reservation-card:hover {
@@ -21,6 +21,7 @@
 
 .reservation-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
@@ -55,11 +56,13 @@
   font-size: 0.875rem;
   color: #57595B;
   line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
 .reservation-actions {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .btn-approve, .btn-cancel {
   padding: 0.4rem 0.75rem;
