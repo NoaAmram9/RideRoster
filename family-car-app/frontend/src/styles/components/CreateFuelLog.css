@@ -1,0 +1,105 @@
+.fuel-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.fuel-card {
+  background: #EFE9E3;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.fuel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.fuel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.fuel-header h2 {
+  font-size: 1.75rem;
+  color: #452829;
+  font-weight: 700;
+}
+.fuel-close {
+  font-size: 1.5rem;
+  color: #57595B;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.fuel-close:hover {
+  color: #C9B59C;
+}
+
+.fuel-form .fuel-field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.fuel-form label {
+  font-size: 0.875rem;
+  color: #452829;
+  margin-bottom: 0.25rem;
+}
+.fuel-form input,
+.fuel-form select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 2px solid #C9B59C;
+  background: #F9F8F6;
+  transition: all 0.3s ease;
+}
+.fuel-form input:focus,
+.fuel-form select:focus {
+  border-color: #D9CFC7;
+  box-shadow: 0 0 6px #D9CFC7;
+  outline: none;
+}
+
+.fuel-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.fuel-btn {
+  flex: 1;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.fuel-btn.cancel {
+  background: #F9F8F6;
+  border: 2px solid #C9B59C;
+  color: #452829;
+}
+.fuel-btn.cancel:hover {
+  background: #D9CFC7;
+  color: #452829;
+}
+.fuel-btn.submit {
+  background: #D9CFC7;
+  color: #452829;
+  border: none;
+}
+.fuel-btn.submit:hover {
+  background: #C9B59C;
+}
+.fuel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

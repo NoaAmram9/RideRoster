@@ -1,0 +1,80 @@
+.calendar-container {
+  background: #F9F8F6;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  font-size: 1.75rem;
+  color: #452829;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.calendar-header .calendar-nav button {
+  background: #D9CFC7;
+  border: none;
+  color: #452829;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.calendar-header .calendar-nav button:hover {
+  background: #C9B59C;
+  color: #F9F8F6;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-cell {
+  background: #EFE9E3;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-cell:hover {
+  background: #D9CFC7;
+}
+
+.calendar-cell.today {
+  border: 2px solid #C9B59C;
+}
+
+.calendar-cell .date-number {
+  font-weight: 600;
+  color: #452829;
+  font-size: 1rem;
+}
+
+.calendar-cell .reservation-badge {
+  background: #C9B59C;
+  color: #452829;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.25rem;
+}

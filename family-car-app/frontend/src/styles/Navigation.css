@@ -1,0 +1,27 @@
+.navbar {
+  background: #C9B59C;
+  border-bottom: 2px solid #C9B59C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 0 0 12px 12px;
+}
+
+.navbar a {
+  color: #452829;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.navbar a:hover {
+  color: #C9B59C;
+  text-shadow: 0 0 4px #C9B59C;
+}
+.navbar a.active {
+  border-bottom: 3px solid #C9B59C;
+  color: #452829;
+}

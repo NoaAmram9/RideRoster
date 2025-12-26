@@ -1,0 +1,129 @@
+/* Page background */
+.fuel-logs-page {
+  min-height: 100vh;
+  background: #F9F8F6;
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.fuel-logs-page h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #C9B59C;
+}
+
+.fuel-logs-page p {
+  color: #666;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid #FFE3CC;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.summary-card p:first-child {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.summary-card p:last-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Action Button */
+.log-fuel-btn {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #F9F8F6, #F9F8F6);
+  color: #C9B59C;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.log-fuel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Fuel Logs List */
+.fuel-logs-list {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid #FFE3CC;
+  overflow: hidden;
+}
+
+.fuel-log-item {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.fuel-log-item:hover {
+  background: #FFF1F0;
+}
+
+.fuel-log-date {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.fuel-log-detail p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.fuel-log-detail .added,
+.fuel-log-detail .paid {
+  color: #8fbe9a;
+  font-weight: 500;
+}
+
+/* Reservation badge */
+.reservation-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #F9F8F6;
+  color: #C9B59C;
+}
+
+/* Loader */
+.loader {
+  width: 3rem;
+  height: 3rem;
+  border-bottom: 4px solid #C9B59C;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,11 +1,8 @@
-/**
- * Create fuel log modal component.
- */
-
 import React, { useState, useEffect } from 'react';
 import { fuelLogsAPI, reservationsAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import '../styles/components/CreateFuelLog.css';
 
 const CreateFuelLog = ({ onClose, onSuccess }) => {
   const { user } = useAuth();
@@ -45,7 +42,6 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate fuel levels
     if (parseFloat(formData.fuel_before) < 0 || parseFloat(formData.fuel_before) > 100) {
       toast.error('Fuel before must be between 0 and 100');
       return;
@@ -77,30 +73,22 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-gray-900">Log Fuel Usage</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600"
-          >
-            <span className="text-2xl">×</span>
-          </button>
+    <div className="fuel-modal">
+      <div className="fuel-card">
+        <div className="fuel-header">
+          <h2>Log Fuel Usage</h2>
+          <button onClick={onClose} className="fuel-close">×</button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="reservation_id" className="block text-sm font-medium text-gray-700 mb-1">
-              Reservation *
-            </label>
+        <form onSubmit={handleSubmit} className="fuel-form">
+          <div className="fuel-field">
+            <label htmlFor="reservation_id">Reservation *</label>
             <select
               id="reservation_id"
               name="reservation_id"
               required
               value={formData.reservation_id}
               onChange={handleChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="">Select a reservation</option>
               {reservations.map((res) => (
@@ -111,10 +99,8 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
             </select>
           </div>
 
-          <div>
-            <label htmlFor="fuel_before" className="block text-sm font-medium text-gray-700 mb-1">
-              Fuel Before (%) *
-            </label>
+          <div className="fuel-field">
+            <label htmlFor="fuel_before">Fuel Before (%) *</label>
             <input
               id="fuel_before"
               name="fuel_before"
@@ -125,15 +111,12 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
               required
               value={formData.fuel_before}
               onChange={handleChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="e.g., 75.5"
             />
           </div>
 
-          <div>
-            <label htmlFor="fuel_after" className="block text-sm font-medium text-gray-700 mb-1">
-              Fuel After (%) *
-            </label>
+          <div className="fuel-field">
+            <label htmlFor="fuel_after">Fuel After (%) *</label>
             <input
               id="fuel_after"
               name="fuel_after"
@@ -144,15 +127,12 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
               required
               value={formData.fuel_after}
               onChange={handleChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="e.g., 50.0"
             />
           </div>
 
-          <div>
-            <label htmlFor="fuel_added_liters" className="block text-sm font-medium text-gray-700 mb-1">
-              Fuel Added (Liters)
-            </label>
+          <div className="fuel-field">
+            <label htmlFor="fuel_added_liters">Fuel Added (Liters)</label>
             <input
               id="fuel_added_liters"
               name="fuel_added_liters"
@@ -161,15 +141,12 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
               min="0"
               value={formData.fuel_added_liters}
               onChange={handleChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="e.g., 30.5"
             />
           </div>
 
-          <div>
-            <label htmlFor="cost_paid" className="block text-sm font-medium text-gray-700 mb-1">
-              Cost Paid ($)
-            </label>
+          <div className="fuel-field">
+            <label htmlFor="cost_paid">Cost Paid ($)</label>
             <input
               id="cost_paid"
               name="cost_paid"
@@ -178,24 +155,13 @@ const CreateFuelLog = ({ onClose, onSuccess }) => {
               min="0"
               value={formData.cost_paid}
               onChange={handleChange}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="e.g., 45.75"
             />
           </div>
 
-          <div className="flex gap-3 pt-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={loading}
-              className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
+          <div className="fuel-actions">
+            <button type="button" onClick={onClose} className="fuel-btn cancel">Cancel</button>
+            <button type="submit" disabled={loading} className="fuel-btn submit">
               {loading ? 'Creating...' : 'Create'}
             </button>
           </div>

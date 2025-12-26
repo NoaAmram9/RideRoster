@@ -1,0 +1,83 @@
+/* Page background */
+.dashboard-page {
+  min-height: 100vh;
+  background: #F9F8F6;
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.dashboard-page h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #C9B59C;
+}
+
+.dashboard-page p {
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.filter-buttons button.active {
+  background: linear-gradient(90deg,  #C9B59C, #D9CFC7);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.filter-buttons button.inactive {
+  background: #fff;
+  color: #555;
+  border: 1px solid #FFE3CC;
+}
+
+.filter-buttons button.inactive:hover {
+  background: #F9F8F6;
+}
+
+/* New Reservation Button */
+.new-reservation-btn {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #D9CFC7, #C9B59C);
+  color: #fff;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.new-reservation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Loader */
+.dashboard-loader {
+  width: 3rem;
+  height: 3rem;
+  border-bottom: 4px solid #C9B59C;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

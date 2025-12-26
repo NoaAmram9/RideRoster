@@ -1,0 +1,102 @@
+/* Background gradient for the page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #F9F8F6, #FFE3CC);
+}
+
+/* Card container */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.login-card h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #C9B59C;
+}
+
+/* Subtitle */
+.login-card p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Form inputs */
+.login-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #C9B59C;
+  background-color: #FFF5F5;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.login-card input:focus {
+  border-color: #C9B59C;
+  box-shadow: 0 0 0 3px rgba(255,107,107,0.2);
+  outline: none;
+}
+
+/* Submit button */
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, #F9F8F6, #F9F8F6);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.login-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.login-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Links */
+.login-card a {
+  color: #C9B59C;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.login-card a:hover {
+  color: #FF3B3B;
+}
+
+/* Footer info */
+.login-card .footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #FFE3CC;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #999;
+}

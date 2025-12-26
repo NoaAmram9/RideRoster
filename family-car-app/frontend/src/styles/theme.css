@@ -1,0 +1,243 @@
+/* ============================
+   BODY
+============================ */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #452829;
+  color: #F3E8DF;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
+.navbar {
+  background: #57595B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border-bottom: 2px solid #E8D1C5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.navbar a {
+  color: #F3E8DF;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+.navbar a:hover {
+  color: #E8D1C5;
+  text-shadow: 0 0 8px #E8D1C5;
+}
+.navbar a.active {
+  color: #F3E8DF;
+  border-bottom: 3px solid #E8D1C5;
+  box-shadow: 0 2px 6px #E8D1C5;
+}
+
+/* ============================
+   CARDS (Dashboard, FuelLogs)
+============================ */
+.card {
+  background: #57595B;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn, .new-reservation-btn {
+  background: linear-gradient(135deg, #E8D1C5, #F3E8DF);
+  color: #452829;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+.btn:hover, .new-reservation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* Disabled state */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================
+   INPUTS
+============================ */
+.input {
+  background: #452829;
+  border: 2px solid #E8D1C5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  color: #F3E8DF;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+.input:focus {
+  border-color: #F3E8DF;
+  box-shadow: 0 0 8px #F3E8DF;
+}
+
+/* ============================
+   HEADERS & TEXT
+============================ */
+h1, h2, h3 {
+  color: #E8D1C5;
+}
+p, span, label {
+  color: #F3E8DF;
+}
+
+/* ============================
+   FILTER BUTTONS (Dashboard)
+============================ */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.filter-buttons button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.filter-buttons button.active {
+  background: linear-gradient(135deg, #E8D1C5, #F3E8DF);
+  color: #452829;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.filter-buttons button.inactive {
+  background: #57595B;
+  color: #F3E8DF;
+  border: 1px solid #E8D1C5;
+}
+.filter-buttons button.inactive:hover {
+  background: #452829;
+  color: #E8D1C5;
+}
+
+/* ============================
+   LOADER
+============================ */
+.loader, .dashboard-loader {
+  width: 3rem;
+  height: 3rem;
+  border-bottom: 4px solid #E8D1C5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================
+   MODALS
+============================ */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(69, 40, 41, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.modal-content {
+  background: #57595B;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+/* ============================
+   LOGIN / REGISTER SPECIFIC
+============================ */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #452829, #57595B);
+}
+
+.auth-box {
+  background: #57595B;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+.auth-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.7);
+}
+.auth-box h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E8D1C5;
+  margin-bottom: 0.5rem;
+}
+.auth-box p {
+  color: #F3E8DF;
+  margin-bottom: 1.5rem;
+}
+.auth-box input {
+  margin-bottom: 1rem;
+}
+
+/* ============================
+   TABLES / LISTS
+============================ */
+.table, .list {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+.table th, .table td, .list-item {
+  background: #57595B;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  color: #F3E8DF;
+  transition: all 0.3s ease;
+}
+.list-item:hover, .table tr:hover td {
+  background: #452829;
+  color: #E8D1C5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
